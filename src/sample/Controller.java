@@ -19,7 +19,7 @@ public class Controller {
 
     public void sendMessage(ActionEvent actionEvent) {
         Button button = (Button) actionEvent.getSource();
-        textArea.appendText(textField.getText());
+        textArea.appendText(textField.getText() + System.lineSeparator());
         textField.clear();
         textArea.setWrapText(true);
         button.setOnKeyPressed(new EventHandler<KeyEvent>() {
@@ -27,7 +27,7 @@ public class Controller {
             public void handle(KeyEvent keyEvent) {
                 if (keyEvent.getCode() == KeyCode.ENTER) {
                     button.getText();
-                    textField.appendText(button.getText());
+                    textField.appendText(button.getText() + System.lineSeparator());
                     textField.clear();
 
                 }
@@ -46,7 +46,7 @@ public class Controller {
             @Override
             public void handle(KeyEvent keyEvent) {
                 if (keyEvent.getCode() == KeyCode.ENTER) {
-                    textArea.appendText(textField.getText());
+                    textArea.appendText(textField.getText() + System.lineSeparator());
                     textField.clear();
 
                 }
@@ -60,4 +60,3 @@ public class Controller {
 
 
 
-///////////
